@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "InvoiceM": {
+    "InvoiceM_frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/invoice-m",
+            "outputPath": "dist/InvoiceM_frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "InvoiceM:build:production"
+              "buildTarget": "InvoiceM_frontend:build:production"
             },
             "development": {
-              "buildTarget": "InvoiceM:build:development"
+              "buildTarget": "InvoiceM_frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
