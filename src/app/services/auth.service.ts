@@ -15,7 +15,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   login(data: LoginUserDto): Observable<any> {
-    console.warn(data);
+   // console.warn(data);
     return this.http.post(`${this.apiUrl}/login`, data).pipe(
       tap((response: any) => {
         localStorage.setItem('authToken', response.token); // Store token in localStorage

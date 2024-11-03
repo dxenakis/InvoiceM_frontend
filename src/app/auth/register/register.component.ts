@@ -21,12 +21,14 @@ export class RegisterComponent {
   ) {
     this.registerForm = this.fb.group({
       fullName: ['', [Validators.required]],
+      username: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
     });
   }
 
   onSubmit() {
+
     if (this.registerForm.valid) {
       this.authService.register(this.registerForm.value).subscribe({
         next: (response) => {  {this.router.navigate(['/dashboard'])}},
