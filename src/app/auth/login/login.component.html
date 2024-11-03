@@ -1,8 +1,17 @@
 <div class='login-container'>
     <h2>Login</h2>
     <form [formGroup]='loginForm' (ngSubmit)='onSubmit()'>
-    <input formControlName='username' placeholder='username' />
-    <input formControlName='password' type='password' placeholder='Password' />
-    <button type='submit'>Login</button>
+        <input formControlName='username' placeholder='Username' />
+        <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.touched || loginForm.get('username')?.dirty)">
+            <small class="error" *ngIf="loginForm.get('username')?.errors?.['required']">Username is required.</small>
+        </div>
+        
+        <input formControlName='password' type='password' placeholder='Password' />
+        <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)">
+            <small class="error" *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
+            <small class="error" *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters.</small>
+        </div>
+        
+        <button type='submit' [disabled]="loginForm.invalid">Login</button>
     </form>
-   </div>
+</div>

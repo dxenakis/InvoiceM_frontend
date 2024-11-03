@@ -1,0 +1,65 @@
+/* header.component.css */
+.header {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out logo, nav, and user profile */
+    align-items: center; /* Vertically center items */
+    background-color: var(--primary-color); /* Use the primary color */
+    color: white; /* Text color for the header */
+    padding: 1rem 2rem; /* Add padding */
+}
+
+.logo h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 1.5rem; /* Adjust logo size */
+}
+
+.navigation ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox for horizontal layout */
+}
+
+.navigation li {
+    margin: 0 1rem; /* Add space between links */
+}
+
+.navigation a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Make links bold */
+}
+
+.navigation a:hover,
+.navigation a.active {
+    text-decoration: underline; /* Underline on hover and active links */
+}
+
+.user-profile {
+    display: flex; /* Use flexbox for user profile layout */
+    align-items: center; /* Vertically center the avatar and text */
+}
+
+.user-name {
+    margin-right: 0.5rem; /* Space between text and avatar */
+}
+
+.avatar {
+    width: 40px; /* Set avatar size */
+    height: 40px; /* Set avatar size */
+    border-radius: 50%; /* Make it circular */
+}
+.logout-button {
+    background-color: var(--secondary-color); /* Use secondary color */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer */
+    font-size: 0.9rem; /* Font size */
+    margin-left: 1rem; /* Space from the avatar */
+}
+
+.logout-button:hover {
+    background-color: darken(var(--secondary-color), 10%); /* Darken on hover */
+}

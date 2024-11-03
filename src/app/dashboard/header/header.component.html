@@ -1,0 +1,17 @@
+<header class="header">
+    <div class="logo">
+        <h1>My Dashboard</h1>
+    </div>
+    <nav class="navigation">
+        <ul>
+            <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+            <li><a routerLink="/settings" routerLinkActive="active">Settings</a></li>
+            <li><a routerLink="/reports" routerLinkActive="active">Reports</a></li>
+        </ul>
+    </nav>
+    <div class="user-profile">
+        <span class="user-name">Hello, User</span>
+        <img src="assets/images/user-avatar.png" alt="User Avatar" class="avatar" />
+        <button (click)="onLogout()" class="logout-button">Logout</button>
+    </div>
+</header>

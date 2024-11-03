@@ -1,9 +1,17 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { ContentComponent } from './content/content.component';
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  templateUrl: './dashboard.component.html', 
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css'],
+  imports: [ContentComponent, HeaderComponent, SidebarComponent, FooterComponent], 
 })
 export class DashboardComponent {
   constructor(private router: Router) {}
