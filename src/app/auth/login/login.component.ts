@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  errorMessage: string = '';  
 
   constructor(
     private fb: FormBuilder,
@@ -23,15 +24,19 @@ export class LoginComponent {
   ) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
-      password: ['', [Validators.required,Validators.minLength(6)]],
+      password: ['', [Validators.required,Validators.minLength(4)]],
     });
   }
+
 
   onSubmit() {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe({
         next: () => this.router.navigate(['/dashboard']),
-        error: (err) => console.error('Login failed', err),
+        error: (err) => {
+          console.error('Login failed', err);
+          this.errorMessage = 'Login failed. Please try again.'; // Set error message here
+        },
       });
     }
   }

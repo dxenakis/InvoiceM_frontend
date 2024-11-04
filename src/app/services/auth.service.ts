@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , HttpErrorResponse  } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { LoginUserDto } from '../models/login-user-dto';
 import { RegisterUserDto } from '../models/register-user-dto';
-import { Observable } from 'rxjs';
+import { Observable , throwError} from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -35,4 +36,16 @@ export class AuthService {
   isAuthenticated(): boolean {
     return !!localStorage.getItem('authToken');
   }
+
+  private handleError(error: HttpErrorResponse): Observable<never> {
+    if (error.status === 401) {
+      // Unauthorized error: this can be displayed to the user
+      return throwError(() => new Error('Invalid username or password'));
+    } else {
+      // Other errors
+      return throwError(() => new Error('An error occurred; please try again later.'));
+    }
+  }
+
+
 }
