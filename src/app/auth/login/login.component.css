@@ -1,3 +1,4 @@
+/* Container Styling */
 .login-container {
     max-width: 400px;
     margin: 50px auto;
@@ -8,10 +9,36 @@
     background-color: #f9f9f9;
 }
 
+/* Navigation Bar Styling */
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #3498db; /* Primary color */
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.nav-bar a.active {
+    border-bottom: 2px solid #3498db; /* Highlight active tab */
+}
+
+.nav-bar a:hover {
+    color: #2980b9;
+}
+
+/* Form Title */
 .login-container h2 {
     text-align: center;
 }
 
+/* Input Styling */
 .login-container input {
     width: 100%;
     padding: 10px;
@@ -20,6 +47,7 @@
     border-radius: 5px;
 }
 
+/* Submit Button */
 .login-container button {
     width: 100%;
     padding: 10px;
@@ -31,12 +59,40 @@
 }
 
 .login-container button:disabled {
-    background-color: #7f8c8d; /* Grey color for disabled button */
+    background-color: #7f8c8d; /* Disabled button color */
 }
 
-.error {
-    color: red;
-    font-size: 12px;
+/* Error Message Styling */
+
+.error-message {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Darker red text color */
+    border-radius: 5px;
+    font-size: 14px;
+    border: 1px solid #f5c6cb; /* Light red border to match the background */
 }
 
+/* Register Link Styling */
+.register-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
 
+.register-link a {
+    color: #3498db; /* Match button color */
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Active Tab Styling */
+.nav-bar a.active {
+    border-bottom: 2px solid #3498db; /* Highlight active tab */
+    color: #3498db;
+}

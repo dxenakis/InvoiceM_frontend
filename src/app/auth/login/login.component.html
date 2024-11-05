@@ -1,22 +1,37 @@
 <div class='login-container'>
-    <h2>Login</h2>
+    <!-- Top Navigation Bar for Login and Register -->
+    <div class="nav-bar">
+        <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
+        <a routerLink="/register"  routerLinkActive="active">Register</a>
+    </div>
+
+ <!--   <h2>Login</h2>-->
     <form [formGroup]='loginForm' (ngSubmit)='onSubmit()'>
+        <!-- Username Input -->
         <input formControlName='username' placeholder='Username' />
         <div *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.touched || loginForm.get('username')?.dirty)">
             <small class="error" *ngIf="loginForm.get('username')?.errors?.['required']">Username is required.</small>
         </div>
-        
+
+        <!-- Password Input -->
         <input formControlName='password' type='password' placeholder='Password' />
         <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)">
             <small class="error" *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</small>
             <small class="error" *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 4 characters.</small>
         </div>
-        
+
+        <!-- Submit Button -->
         <button type='submit' [disabled]="loginForm.invalid">Login</button>
     </form>
 
-        <!-- Error message display -->
-        <div *ngIf="errorMessage" class="error-message">
-            {{ errorMessage }}
-        </div>
+    <!-- Error Message Display -->
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+
+    <!-- Register Link -->
+    <div class="register-link">
+        Don’t have an account? 
+        <a routerLink="/register">Register here</a>
+    </div>
 </div>

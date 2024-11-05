@@ -7,10 +7,6 @@ import { AuthGuard } from './auth/auth.guard';
 export const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [AuthGuard], // Protect the dashboard route
-  },
+  { path: 'dashboard',component: DashboardComponent,canActivate: [AuthGuard],  },// Protect the dashboard route 
   { path: '**', redirectTo: 'login' }, // Fallback route
 ];
