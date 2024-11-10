@@ -33,6 +33,8 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe({
         next: () => this.router.navigate(['/dashboard']),
+
+        
         error: (err) => {
           console.error('Login failed', err);
           this.errorMessage = 'Login failed. Please try again.'; // Set error message here

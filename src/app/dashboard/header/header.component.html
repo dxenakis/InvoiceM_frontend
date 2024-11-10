@@ -10,8 +10,11 @@
         </ul>
     </nav>
     <div class="user-profile">
-        <span class="user-name">Hello, User</span>
-        <img src="../../../assets/images/userlogo.png" alt="User Avatar" class="avatar" />
-        <button (click)="onLogout()" class="logout-button">Logout</button>
+        <div class="user-info">
+            <span class="user-name">{{ userName }}</span>
+            <img src="images/userlogo.png" alt="User Avatar" class="avatar" />
+            <button (click)="onLogout()" class="logout-button">Logout</button>
+        </div>
+        <span class="company-name">{{ companyName }}</span> <!-- Company name below user profile -->
     </div>
 </header>

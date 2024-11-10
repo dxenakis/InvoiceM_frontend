@@ -5,6 +5,7 @@ import { LoginUserDto } from '../models/login-user-dto';
 import { RegisterUserDto } from '../models/register-user-dto';
 import { Observable , throwError} from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { SysParamsService } from '../shared/services/sys-params.service';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
@@ -13,12 +14,16 @@ import { catchError } from 'rxjs/operators';
 export class AuthService {
   private apiUrl = 'http://localhost:8080/auth'; // Update with your backend URL
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router,private sysParamsService: SysParamsService) {}
+
+
 
   login(data: LoginUserDto): Observable<any> {
    // console.warn(data);
     return this.http.post(`${this.apiUrl}/login`, data).pipe(
-      tap((response: any) => {
+      tap((response: any) => {        
+        this.sysParamsService.setCompanyName(response.company.name)
+        this.sysParamsService.setUserName(response.user.fullName)
         localStorage.setItem('authToken', response.token); // Store token in localStorage
       })
     );
@@ -30,6 +35,7 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('authToken'); // Remove token on logout
+    sessionStorage.clear(); // Clear all sessionStorage on logout
     this.router.navigate(['/login']);
   }
 
