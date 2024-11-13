@@ -7,12 +7,13 @@ import { Observable , throwError} from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { SysParamsService } from '../shared/services/sys-params.service';
 import { catchError } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:8080/auth'; // Update with your backend URL
+  private apiUrl = environment.apiUrl+'/auth'; // Update with your backend URL
 
   constructor(private http: HttpClient, private router: Router,private sysParamsService: SysParamsService) {}
 
