@@ -1,8 +1,9 @@
-/* Header Styles */
+/* Header Container */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative; /* Ensures absolute children stay within this header */
     background-color: var(--primary-color);
     color: white;
     padding: 0.5rem 1rem;
@@ -10,23 +11,17 @@
 }
 
 /* Navigation Menu */
-.navigation {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
 .navigation ul {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
     display: flex;
+    gap: 1rem; /* Space between links */
+    position: relative; /* Normal positioning for desktop */
 }
 
 .navigation li {
-    margin: 0 1rem;
+    margin: 0;
 }
 
 .navigation a {
@@ -43,16 +38,13 @@
 /* User Profile Section */
 .user-profile {
     display: flex;
-    flex-direction: column;  /* Stack avatar, username, and company name vertically */
-    align-items: flex-end;  /* Align to the right side */
-    margin-left: auto;
+    flex-direction: column;
+    align-items: flex-end; /* Align to the right */
 }
 
-/* User Info (Username, Logout Button) */
 .user-info {
     display: flex;
     align-items: center;
-    flex-direction: row; /* Align username and avatar in a row */
 }
 
 .user-name {
@@ -78,90 +70,55 @@
     margin-top: 0.25rem;
     font-size: 0.75rem;
     color: lightgray;
-    text-align: right;
 }
 
-/* Avatar size fix */
+/* Avatar */
 .avatar {
-    width: 35px; /* Fixed size for all screen sizes */
-    height: 35px; /* Fixed size for all screen sizes */
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
-    /* Keep navigation items on the left side */
+    /* Header adjustments for mobile */
+    .header {
+        flex-wrap: wrap; /* Allow items to stack if needed */
+    }
+
+    /* Stack navigation vertically */
     .navigation ul {
-        display: flex;
-        flex-direction: column; /* Stack navigation items vertically */
-        padding: 0;
-        margin: 0;
-        width: 50%; /* Limit the width for the navigation to half of the screen */
-        position: absolute; /* Make sure it stays fixed in place */
-        top: 4rem; /* Ensure it is placed under "My Dashboard" (adjust as needed) */
-        left: 1rem; /* Align to the left side */
+        position: absolute; /* Ensure dropdown behavior */
+        top: 100%; /* Start just below the header */
+        left: 0;
+        width: 100%; /* Full width */
+        flex-direction: column;
+        background-color: var(--primary-color);
+        display: none; /* Initially hidden */
+        z-index: 10;
+    }
+
+    .navigation ul.active {
+        display: flex; /* Show when active */
     }
 
     .navigation li {
-        margin-bottom: 1rem; /* Space between navigation items */
+        margin-bottom: 1rem;
     }
 
-    /* Adjust user profile and company info to be on the right side */
+    /* User profile adjustments */
     .user-profile {
-        position: absolute; /* Keep it in place independently from navigation */
-        top: 4rem; /* Align it under the "My Dashboard" */
-        right: 1rem; /* Align it to the right */
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* Keep items aligned to the left side */
+        position: absolute;
+        top: 0.5rem; /* Align with the logo */
+        right: 1rem; /* Align to the right */
     }
 
-    .user-info {
-        display: flex;
-        flex-direction: row;
-        align-items: center; /* Align username and logout button horizontally */
-        margin-bottom: 0.5rem; /* Space between username and company name */
-    }
-
-    .user-name {
-        font-weight: bold;
-        margin-right: 0.5rem;
-    }
-
-    .logout-button {
-        font-size: 0.8rem;
-        margin-left: 0.75rem;
-    }
-
-    /* Company name displayed below the username */
-    .company-name {
-        font-size: 0.8rem;
-        color: lightgray;
-        align-self: flex-start; /* Align company name under the username */
-    }
-
-    /* Hide the avatar on mobile */
+    /* Hide avatar in mobile */
     .avatar {
         display: none;
     }
-}
 
-
-
-/* Desktop Version: Align Company Name under Username */
-@media (min-width: 769px) {
-    .user-profile {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: flex-start; /* Align the user profile to the left */
-    }
-
-    .user-info {
-        margin-bottom: 0.5rem; /* Add space between username and company name */
-    }
-
-    .company-name {
-        margin-top: 0; /* Remove margin-top */
-        font-size: 0.9rem; /* Adjust font size for desktop */
-        color: lightgray;
+    /* Make logo smaller in mobile */
+    .logo h1 {
+        font-size: 1.2rem; /* Reduce font size for mobile */
     }
 }
