@@ -25,7 +25,9 @@ export class AuthService {
       tap((response: any) => {        
         this.sysParamsService.setCompanyName(response.company.name)
         this.sysParamsService.setUserName(response.user.fullName)
-        localStorage.setItem('authToken', response.token); // Store token in localStorage
+        sessionStorage.setItem('authenticationToken', response.token); // Store token in sessionStorage
+        
+        
       })
     );
   }
@@ -35,13 +37,14 @@ export class AuthService {
   }
 
   logout(): void {
-    localStorage.removeItem('authToken'); // Remove token on logout
+   // localStorage.removeItem('authToken'); // Remove token on logout
+    sessionStorage.removeItem('authenticationToken') ; // Remove token on logout
     sessionStorage.clear(); // Clear all sessionStorage on logout
     this.router.navigate(['/login']);
   }
 
   isAuthenticated(): boolean {
-    return !!localStorage.getItem('authToken');
+    return !!sessionStorage.getItem('authenticationToken');
   }
 
   private handleError(error: HttpErrorResponse): Observable<never> {

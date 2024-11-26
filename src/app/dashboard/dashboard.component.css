@@ -1,47 +1,46 @@
 /* General container for the dashboard */
 .dashboard-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh; /* Full height of the viewport */
-  }
-  
-  /* Styling for the header */
-  .dashboard-container app-header {
-    background-color: var(--primary-color); /* Use your CSS variable or specific color */
-    color: black;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  /* Main area for sidebar and content */
-  .dashboard-main {
-    display: flex;
-    flex: 1; /* Fills the remaining vertical space */
-  }
-  
-  /* Sidebar styling */
-  .dashboard-main app-sidebar {
-    width: 250px; /* Fixed width for the sidebar */
-    background-color: var(--secondary-color); /* Use your CSS variable or specific color */
-    color: black;
-    padding: 1rem;
-    box-sizing: border-box; /* Includes padding in the width */
-  }
-  
-  /* Content area styling */
-  .dashboard-main app-content {
-    flex: 1; /* Fills the remaining horizontal space */
-    padding: 1rem;
-    background-color: var(--background-color); /* Use your CSS variable or specific color */
-    overflow-y: auto; /* Enables scrolling if content overflows */
-    box-sizing: border-box; /* Includes padding in the width */
-  }
-  
-  /* Styling for the footer */
-  .dashboard-container app-footer {
-    background-color: var(--primary-color); /* Use your CSS variable or specific color */
-    color: black;
-    text-align: center;
-    padding: 0.5rem;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of the viewport */
+}
+
+/* Styling for the header */
+.dashboard-container app-header {
+  background-color: var(--primary-color); /* Use your CSS variable or specific color */
+  color: black;
+  padding: 1rem; 
+  text-align: center;
+}
+
+/* Main area for sidebar and content */
+.dashboard-main {
+  display: flex;
+  flex: 1; /* Fills the remaining vertical space */
+}
+
+/* Sidebar styling */
+.dashboard-main app-sidebar {
+  width: 250px; /* Fixed width for the sidebar */
+  background-color: var(--secondary-color); /* Use your CSS variable or specific color */
+  color: black;
+  padding: 1rem;
+  box-sizing: border-box; /* Includes padding in the width */
+}
+
+/* Content area styling */
+.dashboard-main app-content {
+  flex: 1; /* Fills the remaining horizontal space */
+  padding: 1rem;
+  background-color: var(--background-color); /* Use your CSS variable or specific color */
+  overflow-y: auto; /* Enables scrolling if content overflows */
+  box-sizing: border-box; /* Includes padding in the width */
+}
+
+/* Styling for the footer */
+.dashboard-container app-footer {
+  background-color: var(--primary-color); /* Use your CSS variable or specific color */
+  color: black;
+  text-align: center;
+  padding: 0.5rem;
+}
