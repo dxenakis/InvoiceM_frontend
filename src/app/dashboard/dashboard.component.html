@@ -1,9 +1,9 @@
 <!-- dashboard.component.html -->
 <div class="dashboard-container">
  
-  <app-header (logout)="logout()"></app-header>
+  <app-header (sidebarToggle)="toggleSidebar()" (logout)="logout()"></app-header>
     <div class="dashboard-main">
-     <app-sidebar></app-sidebar> 
+      <app-sidebar *ngIf="isSidebarVisible"></app-sidebar>
       <app-content></app-content>
     </div>
    <app-footer></app-footer>

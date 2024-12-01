@@ -29,7 +29,11 @@ export class HeaderComponent implements OnInit {
 
   }
 
+  @Output() sidebarToggle = new EventEmitter<void>();
 
+  toggleSidebar() {
+    this.sidebarToggle.emit();
+  }
 
 
   @Output() logout = new EventEmitter<void>();

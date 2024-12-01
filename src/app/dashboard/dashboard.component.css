@@ -26,6 +26,14 @@
   color: black;
   padding: 1rem;
   box-sizing: border-box; /* Includes padding in the width */
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+.dashboard-main app-sidebar.ng-leave {
+  transform: translateX(-100%);
+  position: absolute;
 }
 
 /* Content area styling */

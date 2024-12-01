@@ -1,5 +1,9 @@
 <header class="header">
     <div class="logo">
+        <!-- Hamburger Icon -->
+        <button class="menu-toggle" (click)="toggleSidebar()">
+            <span class="hamburger-icon">&#9776;</span>
+        </button>
         <h1>My Dashboard</h1>
     </div>
     <nav class="navigation">
@@ -11,10 +15,10 @@
     </nav>
     <div class="user-profile">
         <div class="user-info">
-            <span class="user-name">{{ userName }}</span>
             <img src="images/userlogo.png" alt="User Avatar" class="avatar" />
             <button (click)="onLogout()" class="logout-button">Logout</button>
         </div>
-        <span class="company-name">{{ companyName }}</span>
+        <!-- Move username here -->
+        <span class="user-name user-name-below">{{ userName }}</span>
     </div>
 </header>
