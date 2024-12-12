@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    apiUrl: 'http://192.168.1.145:8080' // Adjust this to your backend's URL and port for development
+    apiUrl: 'https://localhost:8443/api' // Adjust this to your backend's URL and port for development
   };
   
