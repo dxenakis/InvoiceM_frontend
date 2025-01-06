@@ -5,14 +5,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { AuthGuard } from './auth/auth.guard';
 import { SalonsComponent } from './salons/salons.component';
-import { SalondetailsComponent } from './salondetails/salondetails.component';
+import { SalonDetailsComponent } from './salondetails/salondetails.component';
 
 export const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'landingpage', component: LandingpageComponent },
   { path: 'salons', component: SalonsComponent },
-  { path: 'salondetails', component: SalondetailsComponent },
+  { path: 'salondetails/:salonId', component: SalonDetailsComponent },
   { path: 'dashboard',component: DashboardComponent,canActivate: [AuthGuard],  },// Protect the dashboard route 
   { path: '**', redirectTo: 'landingpage' }, // Fallback route
 ];

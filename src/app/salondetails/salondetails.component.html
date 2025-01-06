@@ -1,1 +1,17 @@
-<p>salondetails works!</p>
+<div class="salon-details-container">
+  <app-header></app-header>
+
+  <!-- Main content -->
+  <div *ngIf="isLoading" class="loader">Loading salon details...</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <div *ngIf="!isLoading && salonDetails" class="salon-details">
+    <h2>{{ salonDetails.name }}</h2>
+    <p>Address: {{ salonDetails.address }}</p>
+    <p>Service: {{ salonDetails.service }}</p>
+    <p>Rating: {{ salonDetails.rating }}</p>
+    <p>Description: {{ salonDetails.description }}</p>
+  </div>
+
+  <app-footer></app-footer>
+</div>

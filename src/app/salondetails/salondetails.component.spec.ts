@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SalondetailsComponent } from './salondetails.component';
+import { SalonDetailsComponent } from './salondetails.component';
 
 describe('SalondetailsComponent', () => {
-  let component: SalondetailsComponent;
-  let fixture: ComponentFixture<SalondetailsComponent>;
+  let component: SalonDetailsComponent;
+  let fixture: ComponentFixture<SalonDetailsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SalondetailsComponent]
+      imports: [SalonDetailsComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SalondetailsComponent);
+    fixture = TestBed.createComponent(SalonDetailsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -21,3 +21,5 @@ describe('SalondetailsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+

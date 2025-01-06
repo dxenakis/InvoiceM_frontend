@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { FooterComponent } from '../shared/components/footer/footer.component';
 import { HeaderComponent } from "../landingpage/header/header.component";
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { SalonService } from '../services/salonlist.service';
+import { SalonService } from '../services/salon.service';
 
 @Component({
   selector: 'app-salons',
@@ -55,10 +54,11 @@ export class SalonsComponent implements OnInit {
     });
   }
 
+
   viewSalonDetails(salonId: number): void {
-   // console.log(salonId);
-    // Navigate to the salon details page
+    // Navigate to the salon list with query parameters
     this.router.navigate(['/salondetails', salonId]);
   }
+
 
 }

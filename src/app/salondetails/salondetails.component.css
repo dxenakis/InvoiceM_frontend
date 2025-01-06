@@ -1,0 +1,23 @@
+.salon-details-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure it takes the full viewport height */
+  }
+  
+  app-header {
+    flex-shrink: 0; /* Prevent the header from shrinking */
+  }
+  
+  .salon-details {
+    flex: 1; /* Allow this content area to expand and take available space */
+    padding: 1rem;
+  }
+  
+  app-footer {
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+    background-color: #f8f9fa; /* Optional: Add a background color */
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid #ddd; /* Optional: Add a top border for separation */
+  }
+  
