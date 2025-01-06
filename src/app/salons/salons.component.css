@@ -1,0 +1,77 @@
+/* Container */
+.salons-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background-color);
+}
+
+/* Header */
+.salons-container app-header {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Main Content */
+.salons-container h2 {
+  margin: 1rem 0;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.loader {
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+}
+
+.error {
+  margin: 1rem 0;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.salon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.salon-item {
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.salon-item h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+}
+
+.salon-item p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.no-results {
+  margin-top: 2rem;
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Footer */
+.salons-container app-footer {
+  margin-top: auto; /* Push footer to the bottom */
+  width: 100%;
+  background-color: var(--footer-background-color);
+}

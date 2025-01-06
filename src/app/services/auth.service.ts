@@ -23,7 +23,7 @@ export class AuthService {
    // console.warn(data);
     return this.http.post(`${this.apiUrl}/login`, data).pipe(
       tap((response: any) => {        
-        this.sysParamsService.setCompanyName(response.company.name)
+      //  this.sysParamsService.setCompanyName(response.company.name)
         this.sysParamsService.setUserName(response.user.fullName)
         sessionStorage.setItem('authenticationToken', response.token); // Store token in sessionStorage
         

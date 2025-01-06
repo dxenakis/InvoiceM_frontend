@@ -23,9 +23,7 @@ export class HeaderComponent implements OnInit {
           this.userName = name;
         });
     
-        this.sysParamsService.companyName$.subscribe(name => {
-          this.companyName = name;
-        });
+       
 
   }
 

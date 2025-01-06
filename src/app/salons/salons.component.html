@@ -1,0 +1,26 @@
+<div class="salons-container">
+  <app-header></app-header>
+  <h2>Available Salons</h2>
+
+  <!-- Loading Indicator -->
+  <div *ngIf="isLoading" class="loader">Loading salons...</div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+  <!-- Salon List -->
+  <ul *ngIf="!isLoading && salons.length > 0">
+    <li *ngFor="let salon of salons" class="salon-item" (click)="viewSalonDetails(salon.id)">
+      <h3>{{ salon.name }}</h3>
+      <p>{{ salon.address }}</p>
+      <p>Service: {{ salon.service }}</p>
+      <p>Rating: {{ salon.rating }}</p>
+    </li>
+  </ul>
+
+  <!-- No Results -->
+  <div *ngIf="!isLoading && salons.length === 0" class="no-results">
+    No salons found for "{{ service }}" near "{{ address }}".
+  </div>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,87 @@
+/* General Container */
+.landingpage-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Main Section Styling */
+  .landing-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+  }
+  
+  /* Search Form Styling */
+  .search-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .search-container h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  button.search-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  button.search-button:hover {
+    background-color: darken(var(--primary-color), 10%);
+  }
+
+  @media (max-width: 768px) {
+    /* Stack auth links vertically */
+    .auth-links {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  
+    /* Adjust logo alignment */
+    .logo {
+      text-align: left;
+      margin-left: 1rem;
+    }
+  
+    /* Make the search form responsive */
+    .search-container {
+      max-width: 90%;
+      padding: 1.5rem;
+    }
+  }
+  

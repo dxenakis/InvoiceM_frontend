@@ -1,0 +1,7 @@
+/* Styling for the footer */
+.footer {
+    background-color: var(--primary-color); /* Use your CSS variable or specific color */
+    color: black;
+    text-align: center;
+    padding: 0.5rem;
+  }

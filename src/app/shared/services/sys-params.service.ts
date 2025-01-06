@@ -26,6 +26,7 @@ export class SysParamsService {
     return sessionStorage.getItem('userName') || 'User';
   }
 
+  /* Not used
   // Set the company name and save to sessionStorage
   setCompanyName(name: string): void {
     this.companyNameSource.next(name);
@@ -35,5 +36,5 @@ export class SysParamsService {
   // Retrieve the company name from sessionStorage
   getCompanyName(): string {
     return sessionStorage.getItem('companyName') || 'Company';
-  }
+  }*/
 }
